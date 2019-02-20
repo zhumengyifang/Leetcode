@@ -2,8 +2,7 @@ package org.demo;
 
 import Model.ListNode;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Solution {
 
@@ -144,7 +143,7 @@ public class Solution {
     /// <returns>字符串第一次出现的位置索引</returns>
     public static int arithmetic_KMP(String haystack, String needle) {
         int index = -1;   //正确匹配的开始索引
-        int[] tableValue = GetPartialMatchTable(needle);
+        int[] tableValue = getPartialMatchTable(needle);
         int i = 0, j = 0; //操作字符串和匹配字符串 索引迭代
         while (i < haystack.length() && j < needle.length()) {
             if (haystack.charAt(i) == needle.charAt(j)) //当第一个字符匹配上，接着匹配第二、、、
@@ -202,176 +201,160 @@ public class Solution {
         }
         return result;
     }
-    
+
     //移除元素
     public int removeElement(int[] nums, int val) {
-         int i = 0;
-            int len = nums.Length;
-            while(i<len)
-            {
-                if(nums[i]==val)
-                {
-                    nums[i] = nums[--len];
-                }
-                else
-                {
-                    i++;
-                }
+        int i = 0;
+        int len = nums.length;
+        while (i < len) {
+            if (nums[i] == val) {
+                nums[i] = nums[--len];
+            } else {
+                i++;
             }
-            return len;
+        }
+        return len;
     }
-    
+
     //删除链表重复项
-     public int removeDuplicates(int[] nums) {
-        if (nums.Length == 0) return 0;
-          int i = 0;
-            for (int j = 1; j < nums.Length; j++)
-            {
-                if (nums[i] != nums[j])
-                {
-                    i++;
-                    nums[i] = nums[j];
-                }
+    public int removeDuplicates(int[] nums) {
+        if (nums.length == 0) return 0;
+        int i = 0;
+        for (int j = 1; j < nums.length; j++) {
+            if (nums[i] != nums[j]) {
+                i++;
+                nums[i] = nums[j];
             }
-            return i + 1;
+        }
+        return i + 1;
     }
-    
-    
+
+
     /**
- * Definition for singly-linked list.
- * public class ListNode {
- *     public int val;
- *     public ListNode next;
- *     public ListNode(int x) { val = x; }
- * }
- */
+     * Definition for singly-linked list.
+     * public class ListNode {
+     * public int val;
+     * public ListNode next;
+     * public ListNode(int x) { val = x; }
+     * }
+     */
     //合并两个有序链表
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-         ListNode p = new ListNode(0);
-            ListNode d = p;
-            while (l1 != null && l2 != null)
-            {
-                if (l1.val > l2.val)
-                {
-                    d.next = new ListNode(l2.val);
-                    l2 = l2.next;
-                }
-                else
-                {
-                    d.next = new ListNode(l1.val);
-                    l1 = l1.next;
-                }
-                d = d.next;
+        ListNode p = new ListNode(0);
+        ListNode d = p;
+        while (l1 != null && l2 != null) {
+            if (l1.val > l2.val) {
+                d.next = new ListNode(l2.val);
+                l2 = l2.next;
+            } else {
+                d.next = new ListNode(l1.val);
+                l1 = l1.next;
             }
+            d = d.next;
+        }
 
-            if (l1 != null)
-            {
-                d.next = l1;
-            }
-            else if (l2 != null)
-            {
-                d.next = l2;
-            }
-            return p.next;
+        if (l1 != null) {
+            d.next = l1;
+        } else if (l2 != null) {
+            d.next = l2;
+        }
+        return p.next;
     }
 
     //最长公共前缀
-      public string longestCommonPrefix(string[] strs) {
-         if (strs.Length == 0) return "";
-            for (int i = 0; i < strs[0].Length;)
-            {
-                bool p = true;
-                var msg = strs[0][i];
-                for (int k = 1; k < strs.Length; k++)
-                {
-                    if (strs[k].Length == 0) return "";
-                    if (strs[k].Length - 1 < i) p = false;
-                    p = p && strs[k][i] == msg;
-                }
-                i++;
-                if (!p || strs[0].Length - 1 < i) return strs[0].Substring(0, p ? i : i - 1);
+    public String longestCommonPrefix(String[] strs) {
+        if (strs.length == 0) return "";
+        for (int i = 0; i < strs[0].length(); ) {
+            boolean p = true;
+            char msg = strs[0].charAt(i);
+            for (int k = 1; k < strs.length; k++) {
+                if (strs[k].length() == 0) return "";
+                if (strs[k].length() - 1 < i) p = false;
+                p = p && strs[k].charAt(i) == msg;
             }
-            return "";
-    }
-    
-      //搜索插入位置
-  public int searchInsert(int[] nums, int target) {
-           int index=0;
-            for (int i = 0; i < nums.Length; i++)
-            {
-                if (nums[i] == target) return i;
-
-                if (nums[i] < target) index++;
-
-                if (nums[i] > target) return index;
-            }
-         return index;
-    }
-	
-	//最大子序和
-	 public int maxSubArray(int[] nums)
-        {
-            int res = nums[0];
-            int sum = 0;
-            for (int i = 0; i < nums.Length; i++)
-            {
-                if (sum > 0)
-                    sum += nums[i];
-                else
-                    sum = nums[i];
-                res = res > sum ? res : sum;
-            }
-            return res;
+            i++;
+            if (!p || strs[0].length() - 1 < i) return strs[0].substring(0, p ? i : i - 1);
         }
-		
-		//最后一个单词的长度
-	public int lengthOfLastWord(string s) {
-        return s.Trim().Split(" ")[s.Trim().Split(" ").Length - 1].Length;
+        return "";
     }
-	
-	//加一
-	public int[] plusOne(int[] digits)
-        {
-            bool p = true;
-            for (int i = digits.Length - 1; i >= 0 && p; i--)
-            {
-                if (digits[i] == 9)
-                {
-                    p = true;
-                    digits[i] = 0;
-                    if (i == 0)
-                    {
-                        return new[] { 1 }.Concat(digits).ToArray();
-                    }
-                }
-                else
-                {
-                    p = false;
-                    digits[i] += 1;
-                }
-            }
-            return digits;
+
+    //搜索插入位置
+    public int searchInsert(int[] nums, int target) {
+        int index = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == target) return i;
+
+            if (nums[i] < target) index++;
+
+            if (nums[i] > target) return index;
         }
-    
-    public String addBinary(String a, String b) {
-        String result; 
-        int cur=0, c=0,i,j,f=0;
-        for(i = a.size()-1 , j = b.size()-1; j>=0 || i>=0 ; j--,i--){
-            int i1 = i>=0?a[i]-'0':0;
-            int j1 = j>=0?b[j]-'0':0;
-            c = i1+j1;
-            int temp = i1 + j1 + cur ;
-            f = cur;
-            cur = 0;
-            if(temp > 1) cur=1;
-            if(temp == 2 || temp == 0)
-                result.insert(result.begin(),'0');
+        return index;
+    }
+
+    //最大子序和
+    public int maxSubArray(int[] nums) {
+        int res = nums[0];
+        int sum = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (sum > 0)
+                sum += nums[i];
             else
-                result.insert(result.begin(),'1');
+                sum = nums[i];
+            res = res > sum ? res : sum;
         }
-        if(cur == 1)
-            result.insert(result.begin(),'1');
-        return result;
+        return res;
+    }
+
+    //最后一个单词的长度
+    public int lengthOfLastWord(String s) {
+        return s.trim().split(" ")[s.trim().split(" ").length - 1].length();
+    }
+
+    //加一
+    public int[] plusOne(int[] digits) {
+        boolean p = true;
+        for (int i = digits.length - 1; i >= 0 && p; i--) {
+            if (digits[i] == 9) {
+                p = true;
+                digits[i] = 0;
+                if (i == 0) {
+                    int[] res = new int[digits.length + 1];
+                    res[0] = 1;
+                    System.arraycopy(digits, 0, res, 1, digits.length);
+                    return res;
+                }
+            } else {
+                p = false;
+                digits[i] += 1;
+            }
+        }
+        return digits;
+    }
+
+    /**
+     * 二进制求和
+     *
+     * @param a
+     * @param b
+     * @return
+     */
+    public String addBinary(String a, String b) {
+        List<String> newArray = new ArrayList<String>();
+        a = new StringBuilder(a).reverse().toString();
+        b = new StringBuilder(b).reverse().toString();
+        int temp = 0;
+        int i;
+        for (i = 0; i < Math.max(a.length(), b.length()); i++) {
+            int x = (i >= a.length()) ? 0 : Integer.valueOf(String.valueOf(a.charAt(i)));
+            int y = (i >= b.length()) ? 0 : Integer.valueOf(String.valueOf(b.charAt(i)));
+            int sum = x + y + temp;
+            temp = sum / 2;
+            newArray.add(String.valueOf(sum % 2));
+        }
+        if (temp == 1)
+            newArray.add(String.valueOf(temp));
+        Collections.reverse(newArray);
+        return String.join("", newArray);
     }
 
 }
