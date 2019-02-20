@@ -202,7 +202,98 @@ public class Solution {
         }
         return result;
     }
+    
+    //移除元素
+    public int RemoveElement(int[] nums, int val) {
+         int i = 0;
+            int len = nums.Length;
+            while(i<len)
+            {
+                if(nums[i]==val)
+                {
+                    nums[i] = nums[--len];
+                }
+                else
+                {
+                    i++;
+                }
+            }
+            return len;
+    }
+    
+    //删除链表重复项
+     public int RemoveDuplicates(int[] nums) {
+        if (nums.Length == 0) return 0;
+          int i = 0;
+            for (int j = 1; j < nums.Length; j++)
+            {
+                if (nums[i] != nums[j])
+                {
+                    i++;
+                    nums[i] = nums[j];
+                }
+            }
+            return i + 1;
+    }
+    
+    
+    /**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     public int val;
+ *     public ListNode next;
+ *     public ListNode(int x) { val = x; }
+ * }
+ */
+    //合并两个有序链表
+    public ListNode MergeTwoLists(ListNode l1, ListNode l2) {
+         ListNode p = new ListNode(0);
+            ListNode d = p;
+            while (l1 != null && l2 != null)
+            {
+                if (l1.val > l2.val)
+                {
+                    d.next = new ListNode(l2.val);
+                    l2 = l2.next;
+                }
+                else
+                {
+                    d.next = new ListNode(l1.val);
+                    l1 = l1.next;
+                }
+                d = d.next;
+            }
 
+            if (l1 != null)
+            {
+                d.next = l1;
+            }
+            else if (l2 != null)
+            {
+                d.next = l2;
+            }
+            return p.next;
+    }
+
+    //最长公共前缀
+      public string LongestCommonPrefix(string[] strs) {
+         if (strs.Length == 0) return "";
+            for (int i = 0; i < strs[0].Length;)
+            {
+                bool p = true;
+                var msg = strs[0][i];
+                for (int k = 1; k < strs.Length; k++)
+                {
+                    if (strs[k].Length == 0) return "";
+                    if (strs[k].Length - 1 < i) p = false;
+                    p = p && strs[k][i] == msg;
+                }
+                i++;
+                if (!p || strs[0].Length - 1 < i) return strs[0].Substring(0, p ? i : i - 1);
+            }
+            return "";
+    }
+    
 
 }
 
