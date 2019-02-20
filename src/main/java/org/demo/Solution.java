@@ -142,7 +142,7 @@ public class Solution {
     /// <param name="haystack">操作字符串</param>
     /// <param name="needle">要查找的字符串</param>
     /// <returns>字符串第一次出现的位置索引</returns>
-    public static int Arithmetic_KMP(String haystack, String needle) {
+    public static int arithmetic_KMP(String haystack, String needle) {
         int index = -1;   //正确匹配的开始索引
         int[] tableValue = GetPartialMatchTable(needle);
         int i = 0, j = 0; //操作字符串和匹配字符串 索引迭代
@@ -171,7 +171,7 @@ public class Solution {
     /// </summary>
     /// <param name="str">要查找匹配的字符串</param>
     /// <returns></returns>
-    private static int[] GetPartialMatchTable(String str) {
+    private static int[] getPartialMatchTable(String str) {
         String[] left, right; //前缀、后缀
         int[] result = new int[str.length()]; //保存 部分匹配表
         for (int i = 0; i < str.length(); i++) {
@@ -204,7 +204,7 @@ public class Solution {
     }
     
     //移除元素
-    public int RemoveElement(int[] nums, int val) {
+    public int removeElement(int[] nums, int val) {
          int i = 0;
             int len = nums.Length;
             while(i<len)
@@ -222,7 +222,7 @@ public class Solution {
     }
     
     //删除链表重复项
-     public int RemoveDuplicates(int[] nums) {
+     public int removeDuplicates(int[] nums) {
         if (nums.Length == 0) return 0;
           int i = 0;
             for (int j = 1; j < nums.Length; j++)
@@ -246,7 +246,7 @@ public class Solution {
  * }
  */
     //合并两个有序链表
-    public ListNode MergeTwoLists(ListNode l1, ListNode l2) {
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
          ListNode p = new ListNode(0);
             ListNode d = p;
             while (l1 != null && l2 != null)
@@ -276,7 +276,7 @@ public class Solution {
     }
 
     //最长公共前缀
-      public string LongestCommonPrefix(string[] strs) {
+      public string longestCommonPrefix(string[] strs) {
          if (strs.Length == 0) return "";
             for (int i = 0; i < strs[0].Length;)
             {
@@ -294,6 +294,85 @@ public class Solution {
             return "";
     }
     
+      //搜索插入位置
+  public int searchInsert(int[] nums, int target) {
+           int index=0;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] == target) return i;
+
+                if (nums[i] < target) index++;
+
+                if (nums[i] > target) return index;
+            }
+         return index;
+    }
+	
+	//最大子序和
+	 public int maxSubArray(int[] nums)
+        {
+            int res = nums[0];
+            int sum = 0;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (sum > 0)
+                    sum += nums[i];
+                else
+                    sum = nums[i];
+                res = res > sum ? res : sum;
+            }
+            return res;
+        }
+		
+		//最后一个单词的长度
+	public int lengthOfLastWord(string s) {
+        return s.Trim().Split(" ")[s.Trim().Split(" ").Length - 1].Length;
+    }
+	
+	//加一
+	public int[] plusOne(int[] digits)
+        {
+            bool p = true;
+            for (int i = digits.Length - 1; i >= 0 && p; i--)
+            {
+                if (digits[i] == 9)
+                {
+                    p = true;
+                    digits[i] = 0;
+                    if (i == 0)
+                    {
+                        return new[] { 1 }.Concat(digits).ToArray();
+                    }
+                }
+                else
+                {
+                    p = false;
+                    digits[i] += 1;
+                }
+            }
+            return digits;
+        }
+    
+    public String addBinary(String a, String b) {
+        String result; 
+        int cur=0, c=0,i,j,f=0;
+        for(i = a.size()-1 , j = b.size()-1; j>=0 || i>=0 ; j--,i--){
+            int i1 = i>=0?a[i]-'0':0;
+            int j1 = j>=0?b[j]-'0':0;
+            c = i1+j1;
+            int temp = i1 + j1 + cur ;
+            f = cur;
+            cur = 0;
+            if(temp > 1) cur=1;
+            if(temp == 2 || temp == 0)
+                result.insert(result.begin(),'0');
+            else
+                result.insert(result.begin(),'1');
+        }
+        if(cur == 1)
+            result.insert(result.begin(),'1');
+        return result;
+    }
 
 }
 
