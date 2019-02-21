@@ -354,6 +354,85 @@ public class Solution {
             result.append(String.valueOf(temp));
         return result.reverse().toString();
     }
+    
+            //x的平方根
+		//神奇的 0x5f3759df
+        public int mySqrt(int x)
+        {
+            long t = x;
+            t = 0x5f3759df - (t >> 1);
+            while (!(t * t <= x && (t + 1) * (t + 1) > x))
+                t = (x / t + t) / 2;
+            return (int)t;
+        }
+		
+		//爬楼梯
+        //假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
+        //每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？
+		//本质就是斐波那契数列
+        public int climbStairs(int n)
+        {
+            if (n == 1 || n == 0) return 1;
+            else if (n == 2) return 2;
+            else
+            {
+                int f1 = 1;
+                int f2 = 2;
+                int f3 = 0;
+                for (int i = 2; i < n; i++)
+                {
+                    f3 = f2 + f1;
+                    f1 = f2;
+                    f2 = f3;
+                }
+                return f3;
+            }
+        }
+		
+		 //删除排序列表的重复元素
+		 public ListNode deleteDuplicates(ListNode head)
+        {
+            ListNode current = head;
+            while (current != null && current.next != null)
+            {
+                if (current.next.val == current.val)
+                {
+                    current.next = current.next.next;
+                }
+                else
+                {
+                    current = current.next;
+                }
+            }
+            return head;
+        }
+		
+		//删除未排序的List
+		public ListNode deleteDuplicates(ListNode head,bool continuous) {
+		if(continuous)
+		{
+		   deleteDuplicates(head);
+		}
+		else
+		{
+		 if (head == null) return head;
+            HashSet<Integer> set = new HashSet<Integer>();
+            set.Add(head.val);
+            ListNode next = head;
+            while (next != null && next.next != null)
+            {
+                if (!set.Add(next.next.val))
+                {
+                    next.next = next.next.next;
+                }
+                else
+                {
+                    next = next.next;
+                }
+            }
+            return head;
+		} 	
+    }
 
 }
 
