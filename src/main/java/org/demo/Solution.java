@@ -339,22 +339,20 @@ public class Solution {
      * @return
      */
     public String addBinary(String a, String b) {
-        List<String> newArray = new ArrayList<String>();
         a = new StringBuilder(a).reverse().toString();
         b = new StringBuilder(b).reverse().toString();
+        StringBuilder result=new StringBuilder();
         int temp = 0;
-        int i;
-        for (i = 0; i < Math.max(a.length(), b.length()); i++) {
+        for (int i = 0; i < Math.max(a.length(), b.length()); i++) {
             int x = (i >= a.length()) ? 0 : Integer.valueOf(String.valueOf(a.charAt(i)));
             int y = (i >= b.length()) ? 0 : Integer.valueOf(String.valueOf(b.charAt(i)));
             int sum = x + y + temp;
             temp = sum / 2;
-            newArray.add(String.valueOf(sum % 2));
+            result.append(String.valueOf(sum % 2));
         }
         if (temp == 1)
-            newArray.add(String.valueOf(temp));
-        Collections.reverse(newArray);
-        return String.join("", newArray);
+            result.append(String.valueOf(temp));
+        return result.reverse().toString();
     }
 
 }
