@@ -1,9 +1,8 @@
-import org.demo.Solution;
-import org.demo.leetCodeUtils;
+import org.demo.EasySolution;
 
 public class Program {
     public static void main(String[] args) {
-        Solution solution=new Solution();
+        EasySolution solution=new EasySolution();
         solution.addBinary("11","1");
     }
 }
