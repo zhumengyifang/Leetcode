@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd1d1f13-64c9-41d4-a60a-a14c10e8775d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Model/ListNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Program.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/demo/Solution.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/demo/leetCodeUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -21,8 +22,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/EasySolutionTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+            <state relative-caret-position="150">
+              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#150#151#0" expanded="true" />
@@ -218,6 +219,7 @@
       <workItem from="1550841108581" duration="2120000" />
       <workItem from="1550850451515" duration="924000" />
       <workItem from="1550851656422" duration="581000" />
+      <workItem from="1550852640894" duration="493000" />
     </task>
     <servers />
   </component>
@@ -245,13 +247,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12036000" />
+    <option name="totallyTimeSpent" value="12529000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-769" width="1504" height="1669" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27017784" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2735978" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -387,8 +389,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/EasySolutionTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        <state relative-caret-position="150">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#150#151#0" expanded="true" />
