@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd1d1f13-64c9-41d4-a60a-a14c10e8775d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/LeetTreeNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/demo/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/demo/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/demo/EasySolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/demo/EasySolution.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -16,25 +18,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/demo/Solution.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/demo/EasySolution.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5580">
-              <caret line="374" column="14" lean-forward="true" selection-start-line="374" selection-start-column="14" selection-end-line="374" selection-end-column="14" />
+            <state relative-caret-position="1167">
+              <caret line="445" column="51" lean-forward="true" selection-start-line="445" selection-start-column="51" selection-end-line="445" selection-end-column="51" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#10855#10864#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Program.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#11670#11671#0" expanded="true" />
+                <element signature="e#11702#11703#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -57,8 +47,10 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/Model/ListNode.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/demo/leetCodeUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Program.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/demo/Solution.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/LeetTreeNode.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Program.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/demo/EasySolution.java" />
       </list>
     </option>
   </component>
@@ -87,6 +79,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -118,6 +111,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="leetcode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="leetCode" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="demo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -128,7 +129,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -186,17 +186,18 @@
       <workItem from="1550665418303" duration="2044000" />
       <workItem from="1550669291600" duration="5006000" />
       <workItem from="1550757470691" duration="926000" />
+      <workItem from="1550841108581" duration="2120000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8411000" />
+    <option name="totallyTimeSpent" value="10531000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-769" width="1504" height="1669" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2599179" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26333788" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -257,8 +258,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/demo/Solution.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5580">
-          <caret line="374" column="14" lean-forward="true" selection-start-line="374" selection-start-column="14" selection-end-line="374" selection-end-column="14" />
+        <state relative-caret-position="5610">
+          <caret line="374" column="9" lean-forward="true" selection-start-line="374" selection-start-column="9" selection-end-line="374" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#10855#10864#0" expanded="true" />
@@ -266,12 +267,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/LeetTreeNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
+          <folding>
+            <element signature="e#157#158#0" expanded="true" />
+            <element signature="e#180#181#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Program.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#97#98#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/demo/EasySolution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1167">
+          <caret line="445" column="51" lean-forward="true" selection-start-line="445" selection-start-column="51" selection-end-line="445" selection-end-column="51" />
+          <folding>
+            <element signature="e#11670#11671#0" expanded="true" />
+            <element signature="e#11702#11703#0" expanded="true" />
           </folding>
         </state>
       </provider>

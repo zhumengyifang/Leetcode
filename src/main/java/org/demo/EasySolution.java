@@ -1,5 +1,6 @@
 package org.demo;
 
+import Model.LeetTreeNode;
 import Model.ListNode;
 
 import java.util.*;
@@ -419,37 +420,49 @@ public class EasySolution {
     }
 
     //两颗二叉树是否相同
-public boolean isSameTree(TreeNode p, TreeNode q) {
-    if(p==null && q==null){
-        return true;
+    public boolean isSameTree(LeetTreeNode p, LeetTreeNode q) {
+        if (p == null && q == null) {
+            return true;
+        }
+
+        if (p != null && q != null && p.val == q.val) {
+            return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+        } else {
+            return false;
+        }
     }
 
-    if(p!=null && q!=null && p.val==q.val  ){
-        return isSameTree(p.left,q.left) && isSameTree(p.right,q.right);
-    }else {
-        return false;
+    /**
+     * 对称二叉树
+     *
+     * @param root
+     * @return
+     */
+    public boolean isSymmetric(LeetTreeNode root) {
+        return isMirror(root, root);
     }
-}
-
-//合并两个有序数据
- public void merge(int[] nums1, int m, int[] nums2, int n) {
-         int p = m + n - 1;
-		 m--;
-		 n--;
-            while (m >= 0 && n >= 0)
-            {
-                nums1[p] = nums1[m] > nums2[n] ? nums1[m--] : nums2[n--];
-				p--;
-            }
-
-            while (n >= 0)
-            {
-                nums1[p] = nums2[n];
-				p--;
-				n--;
-            }
+    private boolean isMirror(LeetTreeNode l1, LeetTreeNode l2) {
+        if (l1 == null && l2 == null) return true;
+        if (l1 == null || l2 == null) return false;
+        return (l1.val == l2.val) && isMirror(l1.left, l2.right) && isMirror(l1.right, l2.left);
     }
 
+    //合并两个有序数据
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int p = m + n - 1;
+        m--;
+        n--;
+        while (m >= 0 && n >= 0) {
+            nums1[p] = nums1[m] > nums2[n] ? nums1[m--] : nums2[n--];
+            p--;
+        }
+
+        while (n >= 0) {
+            nums1[p] = nums2[n];
+            p--;
+            n--;
+        }
+    }
 
 }
 
