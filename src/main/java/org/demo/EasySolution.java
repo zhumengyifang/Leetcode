@@ -418,6 +418,37 @@ public class EasySolution {
         }
     }
 
+    //两颗二叉树是否相同
+public boolean isSameTree(TreeNode p, TreeNode q) {
+    if(p==null && q==null){
+        return true;
+    }
+
+    if(p!=null && q!=null && p.val==q.val  ){
+        return isSameTree(p.left,q.left) && isSameTree(p.right,q.right);
+    }else {
+        return false;
+    }
+}
+
+//合并两个有序数据
+ public void merge(int[] nums1, int m, int[] nums2, int n) {
+         int p = m + n - 1;
+		 m--;
+		 n--;
+            while (m >= 0 && n >= 0)
+            {
+                nums1[p] = nums1[m] > nums2[n] ? nums1[m--] : nums2[n--];
+				p--;
+            }
+
+            while (n >= 0)
+            {
+                nums1[p] = nums2[n];
+				p--;
+				n--;
+            }
+    }
 
 
 }
