@@ -463,6 +463,39 @@ public class EasySolution {
             n--;
         }
     }
+    
+     //二叉树的最大深度
+ public int maxDepth(TreeNode root) {
+        return root==null?0:Math.max(maxDepth(root.left),maxDepth(root.right))+1
+    }
+	
+	//反转字符串中的每个单词
+	 public string reverseWords(string s)
+	 {
+		 return Arrays.stream(s.split(" ")).map(x -> {
+            return new StringBuilder(x).reverse();
+        }).collect(Collectors.joining(" "));
+	 }
+  
+	
+	//Nim游戏 如果堆中石头的数量 nnn 不能被 444 整除，那么你总是可以赢得 Nim 游戏的胜利。巴什博奕
+	 public boolean canWinNim(int n) {
+        return (n % 4 != 0);
+    }
+	
+	
+	//存在重复元素
+	 public boolean containsDuplicate(int[] nums) {
+        Set set=new HashSet<Integer>();
+		 for(int i=0;i<nums.length;i++)
+            {
+                if(!set.add(nums[i]))
+                {
+                    return true;
+                }
+            }
+            return false;
+    }
 
 }
 
