@@ -495,6 +495,49 @@ public class EasySolution {
         }
         return false;
     }
+	
+	//只出现一次的数字
+	public int singleNumber(int[] nums) {
+        int num=0;
+        for(int i=0;i<nums.length;i++)
+        {
+            num^=nums[i];
+        }
+        return num;
+    }
+	
+	 //2的幂 特性为二进制  二进制为 10000  头位1 后面都是0的数字
+	 //例：二进制为
+	 // 16   10000
+	 // 15   01111
+	 // &    00000
+        public bool isPowerOfTwo(int n)
+        {
+            if (n <= 0) return false;
+            if ((n & n - 1) == 0) return true;
+            return false;
+        }
+	
+	//众数 众数是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。
+	//你可以假设数组是非空的，并且给定的数组总是存在众数。
+	 public int majorityElement(int[] nums) {
+       int count = 1;
+            int maj = nums[0];
+            for (int i = 1; i < nums.length; i++)
+            {
+                if (maj == nums[i])
+                    count++;
+                else
+                {
+                    count--;
+                    if (count == 0)
+                    {
+                        maj = nums[i + 1];
+                    }
+                }
+            }
+            return maj;
+    }
 
 }
 
