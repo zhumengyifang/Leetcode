@@ -45,6 +45,20 @@ public class EasySolution {
         throw new IllegalArgumentException("No two sum solution");
     }
 
+    //两数之和 有序数组
+    public int[] twoSum0(int[] numbers, int target) {
+        int l = 0, r = numbers.length - 1;
+        while (l < r) {
+            if (numbers[l] + numbers[r] == target) {
+                return new int[]{l++, r++};
+            } else if (numbers[l] + numbers[r] < target)
+                l++;
+            else
+                r--;
+        }
+        return null;
+    }
+
     /**
      * 两数相加
      *
@@ -477,7 +491,7 @@ public class EasySolution {
             return new StringBuilder(x).reverse();
         }).collect(Collectors.joining(" "));
     }
-	
+
     //Nim游戏 如果堆中石头的数量 nnn 不能被 444 整除，那么你总是可以赢得 Nim 游戏的胜利。巴什博奕
     public boolean canWinNim(int n) {
         return (n % 4 != 0);
@@ -549,48 +563,28 @@ public class EasySolution {
         }
         return dummy.next;
     }
-	
-	 //两数之和 有序数组
-        public int[] twoSum(int[] numbers, int target)
-        {
-            int l = 0, r = numbers.Length - 1;
-            while (l < r)
-            {
-                if (numbers[l] + numbers[r] == target)
-                {
-                    return new int[] { l++, r++ };
-                }
-                else if (numbers[l] + numbers[r] < target)
-                    l++;
-                else
-                    r--;
-            }
-            return null;
+
+    //阶乘后的0
+    //首先题目的意思是末尾有几个0
+    //    比如6! = 【1* 2* 3* 4* 5* 6】
+    //    其中只有2*5末尾才有0，所以就可以抛去其他数据 专门看2 5 以及其倍数 毕竟 4 * 25末尾也是0
+    //    比如10！ = 【2*4*5*6*8*10】
+    //    其中 4能拆成2*2  10能拆成2*5
+    //    所以10！ = 【2*（2*2）*5*（2*3）*（2*2*2）*（2*5）】
+    //    一个2和一个5配对 就产生一个0 所以10！末尾2个0
+    //    转头一想 2肯定比5多 所以只数5的个数就行了
+    //    假若N=31 31里能凑10的5为[5, 2 * 5, 3 * 5, 4 * 5, 25, 6 * 5] 其中 25还能拆为 5**2
+    //    所以 里面的5的个数为 int (31/(5**1)) +  int (31/(5**2))
+    //    所以 只要先找个一个 5** x<n 的x的最大数 然后按上面循环加起来
+    public int trailingZeroes(int n) {
+        int count = 0;
+        while (n / 5 > 0) {
+            count += n / 5;
+            n /= 5;
         }
-		
-		 //阶乘后的0
-        //首先题目的意思是末尾有几个0
-        //    比如6! = 【1* 2* 3* 4* 5* 6】
-        //    其中只有2*5末尾才有0，所以就可以抛去其他数据 专门看2 5 以及其倍数 毕竟 4 * 25末尾也是0
-        //    比如10！ = 【2*4*5*6*8*10】
-        //    其中 4能拆成2*2  10能拆成2*5 
-        //    所以10！ = 【2*（2*2）*5*（2*3）*（2*2*2）*（2*5）】
-        //    一个2和一个5配对 就产生一个0 所以10！末尾2个0
-        //    转头一想 2肯定比5多 所以只数5的个数就行了
-        //    假若N=31 31里能凑10的5为[5, 2 * 5, 3 * 5, 4 * 5, 25, 6 * 5] 其中 25还能拆为 5**2 
-        //    所以 里面的5的个数为 int (31/(5**1)) +  int (31/(5**2))
-        //    所以 只要先找个一个 5** x<n 的x的最大数 然后按上面循环加起来
-        public int trailingZeroes(int n)
-        {
-            int count = 0;
-            while (n / 5 > 0)
-            {
-                count += n / 5;
-                n /= 5;
-            }
-            return count;
-        }
-    
-	
+        return count;
+    }
+
+
 }
 
