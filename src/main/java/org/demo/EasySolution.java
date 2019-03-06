@@ -585,28 +585,29 @@ public class EasySolution {
         return count;
     }
 
-	   //不使用+ -计算两数之和
-	   //两个整数a, b; a ^ b是无进位的相加； a&b得到每一位的进位；让无进位相加的结果与进位不断的异或， 直到进位为0；
-        public int getSum(int a, int b)
-        {
-            return b == 0 ? a : getSum(a ^ b, (a & b) << 1);
+    //不使用+ -计算两数之和
+    //两个整数a, b; a ^ b是无进位的相加； a&b得到每一位的进位；让无进位相加的结果与进位不断的异或， 直到进位为0；
+    public int getSum(int a, int b) {
+        return b == 0 ? a : getSum(a ^ b, (a & b) << 1);
+    }
+
+    //降维打击
+    //各位相加
+    //输入: 38
+    //输出: 2
+    //解释: 各位相加的过程为：3 + 8 = 11, 1 + 1 = 2。 由于 2 是一位数，所以返回 2。
+    public int addDigits(int num) {
+        return 1 + (num - 1) % 9;
+    }
+
+    //从1到N缺失的数字
+    public int missingNumber(int[] nums) {
+        int sum = 0;
+        for (int i = 0; i < nums.length; i++) {
+            sum += nums[i];
         }
-		
-		//降维打击
-        //各位相加
-        //输入: 38
-        //输出: 2 
-        //解释: 各位相加的过程为：3 + 8 = 11, 1 + 1 = 2。 由于 2 是一位数，所以返回 2。
-        public int AddDigits(int num)
-        {
-            return 1 + (num - 1) % 9;
-        }
-		
-		//从1到N缺失的数字
-		  public int MissingNumber(int[] nums)
-        {
-            return ((1 + nums.Length) * nums.Length / 2) - nums.Sum();
-        }
+        return ((1 + nums.length) * nums.length / 2) - sum;
+    }
 
 }
 
