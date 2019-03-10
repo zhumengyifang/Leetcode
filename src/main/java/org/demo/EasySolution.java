@@ -608,49 +608,43 @@ public class EasySolution {
         }
         return ((1 + nums.length) * nums.length / 2) - sum;
     }
-	
-	//字符串中的第一个唯一字符
-	 public int firstUniqChar(String s) {
-         int x;
-         int y;
-         for (int i = 0; i < s.length(); i++)
-         {
-            x = s.indexOf(s[i]);
-            y = s.lastIndexOf(s.charAt(i));
-            if (x==y)
-            {
-               return i;
-            }
-         }
-         return -1;
-    }
-	
-	    //有效的完全平方数
-        //1+3+5+7+9+…+(2n-1)=n^2，即完全平方数肯定是前n个连续奇数的和
-        public bool isPerfectSquare(int num)
-        {
-            int sumnum = 1;
-            while (num > 0)
-            {
-                num -= sumnum;
-                sumnum += 2;
-            }
 
-            return num == 0;
-        }
-		
-	    //数字的补数
-		//给定一个正整数，输出它的补数。补数是对该数的二进制表示取反。
-		 public int findComplement(int num)
-        {
-            int temp = num, c = 0;
-            while (temp > 0)
-            {
-                temp >>= 1;
-                c = (c << 1) + 1;
+    //字符串中的第一个唯一字符
+    public int firstUniqChar(String s) {
+        int x;
+        int y;
+        for (int i = 0; i < s.length(); i++) {
+            x = s.indexOf(s.charAt(i));
+            y = s.lastIndexOf(s.charAt(i));
+            if (x == y) {
+                return i;
             }
-            return num ^ c;
         }
+        return -1;
+    }
+
+    //有效的完全平方数
+    //1+3+5+7+9+…+(2n-1)=n^2，即完全平方数肯定是前n个连续奇数的和
+    public boolean isPerfectSquare(int num) {
+        int sumnum = 1;
+        while (num > 0) {
+            num -= sumnum;
+            sumnum += 2;
+        }
+
+        return num == 0;
+    }
+
+    //数字的补数
+    //给定一个正整数，输出它的补数。补数是对该数的二进制表示取反。
+    public int findComplement(int num) {
+        int temp = num, c = 0;
+        while (temp > 0) {
+            temp >>= 1;
+            c = (c << 1) + 1;
+        }
+        return num ^ c;
+    }
 
 }
 
